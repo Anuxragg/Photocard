@@ -15,6 +15,7 @@ import Bold from './components/bold';
 import Link from './components/link';
 import FontStyle from './components/fontstyle';
 import DotGridCanvas from './components/DotGridCanvas';
+import CometCard from './components/ui/comet-card';
 
 
 
@@ -63,6 +64,7 @@ function App() {
   function handleUpload(e){
     e.preventDefault()
     const file = e.target.files[0];
+    if (file) new Audio('/mixkit-old-camera-shutter-click-1137.wav').play();
     const reader = new FileReader();
 
     reader.onloadend = () => {
@@ -75,32 +77,33 @@ function App() {
 // for reset
   function handleReset(e){
     e.preventDefault()
+    new Audio('/mixkit-clear-mouse-clicks-2997.wav').play()
     setImage(null)
     setTitle('')
     setdate()
     
-  
 
     dateRef.current.value = ''
     titleRef.current.value = ''
 
 
- 
+
   }
 
 
 
   // for image download
- const handleDownload = () => {
-  if (!imgBoxRef.current) return;
+  const handleDownload = () => {
+   new Audio('/mixkit-old-camera-shutter-click-1137.wav').play()
+   if (!imgBoxRef.current) return;
 
-  toPng(imgBoxRef.current, { cacheBust: true, pixelRatio: 4 })
-    .then((dataUrl) => {
-      const link = document.createElement("a");
-      link.download = "card.png";
-      link.href = dataUrl;
-      link.click();
-    });
+   toPng(imgBoxRef.current, { cacheBust: true, pixelRatio: 4 })
+     .then((dataUrl) => {
+       const link = document.createElement("a");
+       link.download = "card.png";
+       link.href = dataUrl;
+       link.click();
+     });
 };
 
 
@@ -188,14 +191,15 @@ function App() {
           <Link />
 
           {/* Card Frame Container */}
-          <div className='relative my-auto flex flex-col items-center justify-center pt-8'>
+          <div className='relative my-auto flex flex-col items-center justify-center pt-8 z-10'>
             
             {/* Vintage Washi Tape Accent */}
             <div className='absolute -top-3 z-30 px-6 py-1 bg-amber-200/90 border border-zinc-800/40 shadow-sm rounded-sm font-mono text-[10px] tracking-widest text-zinc-800 uppercase transform -rotate-2 backdrop-blur-xs select-none pointer-events-none'>
               ★ INSTANT PRINT ★
             </div>
 
-            <div ref={imgBoxRef} className='inline-block'>
+            <CometCard>
+              <div ref={imgBoxRef} className='inline-block'>
 
               <div className='w-[310px] sm:w-[330px] h-[390px] sm:h-[415px] bg-[#e0f2fe] m-4 mb-6 rounded-xl shadow-[8px_8px_0px_#18181b] border-3 border-zinc-900 flex flex-col hover:rotate-1 hover:scale-[1.01] transition-all duration-300 px-5 pt-5 pb-4 overflow-hidden relative select-none
 
@@ -318,8 +322,8 @@ function App() {
                 </div>
 
               </div>
-
             </div>
+          </CometCard>
 
           </div>
 
