@@ -14,6 +14,7 @@ import { Analytics } from "@vercel/analytics/react"
 import Bold from './components/bold';
 import Link from './components/link';
 import FontStyle from './components/fontstyle';
+import DotGridCanvas from './components/DotGridCanvas';
 
 
 
@@ -180,7 +181,9 @@ function App() {
         </div>
 
         {/* Right Canvas / Studio Workspace */}
-        <div className='relative min-h-screen md:h-screen flex-1 flex flex-col justify-center items-center p-6 md:p-10 order-1 md:order-2 bg-retro-grid overflow-hidden'>
+        <div className='relative min-h-screen md:h-screen flex-1 flex flex-col justify-center items-center p-6 md:p-10 order-1 md:order-2 bg-[#f7f4eb] overflow-hidden'>
+          
+          <DotGridCanvas />
 
           <Link />
 
