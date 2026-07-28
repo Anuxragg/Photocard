@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import "tailwindcss";
+
+
+
+/* fonts */
+@theme {
+    --font-clean: "Montserrat", sans-serif;
+    --font-ios: "DM Sans", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+    --font-retro: "Space Grotesk", sans-serif;
+    --font-stamp: "Courier Prime", monospace;
+    --shadow-retro-sm: 2px 2px 0px #18181b;
+    --shadow-retro: 3px 3px 0px #18181b;
+    --shadow-retro-lg: 5px 5px 0px #18181b;
+}
+
+
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* colors */
+@custom-variant yellow (&:where(.yellow, .yellow *));
+@custom-variant sky (&:where(.sky, .sky *));
+@custom-variant pink (&:where(.pink, .pink *));
+@custom-variant green (&:where(.green, .green *));
+@custom-variant red (&:where(.red, .red *));
+@custom-variant indigo (&:where(.indigo, .indigo *));
+@custom-variant neutral (&:where(.neutral, .neutral *));
+@custom-variant purple (&:where(.purple, .purple *));
+@custom-variant teal (&:where(.teal, .teal *));
+@custom-variant orange (&:where(.orange, .orange *));
+@custom-variant sunlight (&:where(.sunlight, .sunlight *));
+@custom-variant custom (&:where(.custom, .custom *));
+
+
+/* filters */
+@custom-variant retro (&:where(.retro, .retro *));
+@custom-variant sunny (&:where(.sunny, .sunny *));
+@custom-variant bw (&:where(.bw, .bw *));
+@custom-variant tealOrange (&:where(.tealOrange, .tealOrange *));
+@custom-variant bright (&:where(.bright, .bright *));
+@custom-variant cinematic (&:where(.cinematic, .cinematic *));
+
+
+/* bold */
+@custom-variant boldtext (&:where(.boldtext, .boldtext *));
+@custom-variant italicText (&:where(.italicText, .italicText *));
+@custom-variant underlinetext (&:where(.underlinetext, .underlinetext *));
+@custom-variant strike (&:where(.strike, .strike *));
+
+/* text color */
+@custom-variant customText (&:where(.customText, .customText *));
+
+
+
+
+/* hide scroll bar */
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Custom retro styling helpers */
+.font-retro {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-stamp {
+  font-family: 'Courier Prime', monospace;
+}
+
+/* Dot background grid */
+.bg-retro-grid {
+  background-color: #f7f4eb;
+  background-image: radial-gradient(#d1cbbd 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+}
+
+/* Sleek retro button press effect */
+.btn-retro {
+  border: 2px solid #18181b;
+  box-shadow: 3px 3px 0px #18181b;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-retro:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #18181b;
+}
+
+.btn-retro:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #18181b;
+}
+
+
+
+
+
+
+
+
