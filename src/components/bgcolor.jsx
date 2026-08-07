@@ -20,6 +20,7 @@ function Bgcolor({onChange, value}) {
         );
         document.documentElement.classList.add(newColor);
         setColor(newColor);
+        if (onChange) onChange(newColor);
     };
 
     
@@ -71,7 +72,7 @@ function Bgcolor({onChange, value}) {
           >
             <input
               type="color"
-              value={value}
+              value={value && typeof value === 'string' && value.startsWith('#') ? value : '#ff0000'}
               onChange={(e) => {
                 changeColor("custom");
                 onChange(e.target.value);
